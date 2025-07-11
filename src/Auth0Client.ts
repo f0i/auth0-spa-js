@@ -318,7 +318,7 @@ export class Auth0Client {
     const url = this._authorizeUrl(params);
 
     return {
-      nonce,
+      nonce: authorizationParams.nonce || nonce,
       code_verifier,
       scope: params.scope,
       audience: params.audience || 'default',

@@ -1671,7 +1671,7 @@ class Auth0Client {
         const params = getAuthorizeParams(this.options, this.scope, authorizationParams, state, authorizationParams.nonce || nonce, code_challenge, authorizationParams.redirect_uri || this.options.authorizationParams.redirect_uri || fallbackRedirectUri, authorizeOptions === null || authorizeOptions === void 0 ? void 0 : authorizeOptions.response_mode);
         const url = this._authorizeUrl(params);
         return {
-            nonce: nonce,
+            nonce: authorizationParams.nonce || nonce,
             code_verifier: code_verifier,
             scope: params.scope,
             audience: params.audience || "default",
