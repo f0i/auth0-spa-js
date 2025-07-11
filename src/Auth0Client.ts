@@ -307,7 +307,7 @@ export class Auth0Client {
       this.scope,
       authorizationParams,
       state,
-      nonce,
+      authorizationParams.nonce || nonce,
       code_challenge,
       authorizationParams.redirect_uri ||
         this.options.authorizationParams.redirect_uri ||
